@@ -17,6 +17,10 @@ Mililitro.create(:descripcion => '110')
 Mililitro.create(:descripcion => '125')
 Mililitro.create(:descripcion => '150')
 
+
+Tipo.create(:descripcion => 'EDT')
+Tipo.create(:descripcion => 'EDP')
+
 Marca.create(:descripcion => 'Hugo Boss')
 Marca.create(:descripcion => 'Carolina Herrera')
 Marca.create(:descripcion => 'Givenchy')
