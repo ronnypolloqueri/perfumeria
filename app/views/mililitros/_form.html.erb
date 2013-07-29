@@ -1,0 +1,21 @@
+<%= form_for(@mililitro) do |f| %>
+  <% if @mililitro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mililitro.errors.count, "error") %> prohibited this mililitro from being saved:</h2>
+
+      <ul>
+      <% @mililitro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Listing mililitros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mililitros.each do |mililitro| %>
+      <tr>
+        <td><%= mililitro.descripcion %></td>
+        <td><%= link_to 'Show', mililitro %></td>
+        <td><%= link_to 'Edit', edit_mililitro_path(mililitro) %></td>
+        <td><%= link_to 'Destroy', mililitro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mililitro', new_mililitro_path %>
