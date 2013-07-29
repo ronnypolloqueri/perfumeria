@@ -14,6 +14,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'perfume', 'perfumes'
   inflect.irregular 'mililitro', 'mililitros'
   inflect.irregular 'marca', 'marcas'
+  inflect.irregular 'tipo', 'tipos'
   inflect.uncountable %w( sexo )
 end
 # These inflection rules are supported but not enabled by default:
