@@ -1,0 +1,37 @@
+<h1>Listing perfumes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Sexo</th>
+      <th>Precio</th>
+      <th>Mililitro</th>
+      <th>Imagen url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @perfumes.each do |perfume| %>
+      <tr>
+        <td><%= perfume.nombre %></td>
+        <td><%= perfume.tipo %></td>
+        <td><%= perfume.sexo %></td>
+        <td><%= perfume.precio %></td>
+        <td><%= perfume.mililitro %></td>
+        <td><%= perfume.imagen_url %></td>
+        <td><%= link_to 'Show', perfume %></td>
+        <td><%= link_to 'Edit', edit_perfume_path(perfume) %></td>
+        <td><%= link_to 'Destroy', perfume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Perfume', new_perfume_path %>

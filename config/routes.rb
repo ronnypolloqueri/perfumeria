@@ -1,4 +1,6 @@
 Perfumeria::Application.routes.draw do
+  resources :perfumes
+
   resources :mililitros
 
   resources :sexo
@@ -13,6 +15,7 @@ Perfumeria::Application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get 'perfumes/ver/:id' => 'perfumes#my_show'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -45,7 +48,7 @@ Perfumeria::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  tipo_id: 
+  sexo_id: 
+  precio: 9.99
+  mililitro_id: 
+  imagen_url: MyString
+
+two:
+  nombre: MyString
+  tipo_id: 
+  sexo_id: 
+  precio: 9.99
+  mililitro_id: 
+  imagen_url: MyString
