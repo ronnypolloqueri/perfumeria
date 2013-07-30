@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Nombre:</strong>
+  <%= @perfume.nombre %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @perfume.marca.descripcion %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @perfume.sexo.descripcion %>
+</p>
+
+
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @perfume.imagen %>
+</p>
+
+<table>
+<% @perfumes.each do |p| %>
+	<tr>
+		<td><%= p.nombre %> <%=p.tipo.descripcion.capitalize%> <%=p.mililitro.descripcion %></td>
+		<td>Precio: S/. <%= p.precio %></td>
+	</tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_perfume_path(@perfume) %> |
+<%= link_to 'Back', perfumes_path %>

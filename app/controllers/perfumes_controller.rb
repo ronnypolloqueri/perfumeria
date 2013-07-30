@@ -1,5 +1,5 @@
 class PerfumesController < ApplicationController
-  before_action :set_perfume, only: [:show, :edit, :update, :destroy]
+  before_action :set_perfume, only: [:my_show, :show, :edit, :update, :destroy]
 
   # GET /perfumes
   # GET /perfumes.json
@@ -10,6 +10,11 @@ class PerfumesController < ApplicationController
   # GET /perfumes/1
   # GET /perfumes/1.json
   def show
+  end
+
+  def my_show
+    @nombre = Perfume.find(params[:id]).nombre
+    @perfumes = Perfume.where('nombre = ?', @nombre )
   end
 
   # GET /perfumes/new
