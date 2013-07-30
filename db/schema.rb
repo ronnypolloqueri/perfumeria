@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130729202545) do
+ActiveRecord::Schema.define(version: 20130729234658) do
 
   create_table "marcas", force: true do |t|
     t.string   "descripcion"
@@ -25,15 +25,18 @@ ActiveRecord::Schema.define(version: 20130729202545) do
 
   create_table "perfumes", force: true do |t|
     t.string   "nombre"
-    t.integer  "tipo_id"
+    t.integer  "marca_id"
     t.integer  "sexo_id"
-    t.decimal  "precio",       precision: 8, scale: 2
+    t.integer  "tipo_id"
     t.integer  "mililitro_id"
-    t.string   "imagen_url"
+    t.integer  "imagen_id"
+    t.decimal  "precio",       precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "perfumes", ["imagen_id"], name: "index_perfumes_on_imagen_id"
+  add_index "perfumes", ["marca_id"], name: "index_perfumes_on_marca_id"
   add_index "perfumes", ["mililitro_id"], name: "index_perfumes_on_mililitro_id"
   add_index "perfumes", ["sexo_id"], name: "index_perfumes_on_sexo_id"
   add_index "perfumes", ["tipo_id"], name: "index_perfumes_on_tipo_id"

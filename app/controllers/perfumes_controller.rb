@@ -1,5 +1,5 @@
 class PerfumesController < ApplicationController
-  before_action :set_perfume, only: [:my_show, :show, :edit, :update, :destroy]
+  before_action :set_perfume, only: [:show, :edit, :update, :destroy]
 
   # GET /perfumes
   # GET /perfumes.json
@@ -7,8 +7,6 @@ class PerfumesController < ApplicationController
     @perfumes = Perfume.all
   end
 
-  def my_show
-  end
   # GET /perfumes/1
   # GET /perfumes/1.json
   def show
@@ -16,11 +14,11 @@ class PerfumesController < ApplicationController
 
   # GET /perfumes/new
   def new
-    @perfume    = Perfume.new
-    @tipos      = Tipo.all.collect{|p| [p.descripcion, p.id]}
-    @sexos      = Sexo.all.collect{|p| [p.descripcion, p.id]}
-    @mililitros = Mililitro.all.collect{|p| [p.descripcion, p.id]}
-
+    @perfume  = Perfume.new
+    @marcas   = Marca.all.collect {|p| [ p.descripcion, p.id ] }
+    @tipos    = Tipo.all.collect {|p| [ p.descripcion, p.id ] }
+    @sexos    = Sexo.all.collect {|p| [ p.descripcion, p.id ] }
+    @mililitros = Mililitro.all.collect {|p| [ p.descripcion, p.id ] }
   end
 
   # GET /perfumes/1/edit
@@ -75,6 +73,6 @@ class PerfumesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def perfume_params
-      params.require(:perfume).permit(:nombre, :tipo_id, :sexo_id, :precio, :mililitro_id, :imagen_url)
+      params.require(:perfume).permit(:nombre, :marca_id, :sexo_id, :tipo_id, :mililitro_id, :imagen_id, :precio)
     end
 end

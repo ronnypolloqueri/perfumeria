@@ -18,7 +18,7 @@ class PerfumesControllerTest < ActionController::TestCase
 
   test "should create perfume" do
     assert_difference('Perfume.count') do
-      post :create, perfume: { imagen_url: @perfume.imagen_url, mililitro_id: @perfume.mililitro_id, nombre: @perfume.nombre, precio: @perfume.precio, sexo_id: @perfume.sexo_id, tipo_id: @perfume.tipo_id }
+      post :create, perfume: { imagen_id: @perfume.imagen_id, marca_id: @perfume.marca_id, mililitro_id: @perfume.mililitro_id, nombre: @perfume.nombre, precio: @perfume.precio, sexo_id: @perfume.sexo_id, tipo_id: @perfume.tipo_id }
     end
 
     assert_redirected_to perfume_path(assigns(:perfume))
@@ -35,7 +35,7 @@ class PerfumesControllerTest < ActionController::TestCase
   end
 
   test "should update perfume" do
-    patch :update, id: @perfume, perfume: { imagen_url: @perfume.imagen_url, mililitro_id: @perfume.mililitro_id, nombre: @perfume.nombre, precio: @perfume.precio, sexo_id: @perfume.sexo_id, tipo_id: @perfume.tipo_id }
+    patch :update, id: @perfume, perfume: { imagen_id: @perfume.imagen_id, marca_id: @perfume.marca_id, mililitro_id: @perfume.mililitro_id, nombre: @perfume.nombre, precio: @perfume.precio, sexo_id: @perfume.sexo_id, tipo_id: @perfume.tipo_id }
     assert_redirected_to perfume_path(assigns(:perfume))
   end
 

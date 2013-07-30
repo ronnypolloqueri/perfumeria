@@ -16,24 +16,28 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
+    <%= f.label :marca %><br>
+    <%= f.select :marca, @marcas %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br>
+    <%= f.select :sexo, @sexos %>
+  </div>
+  <div class="field">
     <%= f.label :tipo %><br>
     <%= f.select :tipo, @tipos %>
   </div>
   <div class="field">
-    <%= f.label :sexo %><br>
-    <%= f.select :tipo, @sexos %>
+    <%= f.label :mililitro %><br>
+    <%= f.select :mililitro, @mililitros %>
+  </div>
+  <div class="field">
+    <%= f.label :imagen %><br>
+    <%= f.text_field :imagen %>
   </div>
   <div class="field">
     <%= f.label :precio %><br>
     <%= f.text_field :precio %>
-  </div>
-  <div class="field">
-    <%= f.label :mililitro %><br>
-    <%= f.select :tipo, @mililitros %>
-  </div>
-  <div class="field">
-    <%= f.label :imagen_url %><br>
-    <%= f.text_field :imagen_url %>
   </div>
   <div class="actions">
     <%= f.submit %>

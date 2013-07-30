@@ -2,16 +2,18 @@
 
 one:
   nombre: MyString
-  tipo_id: 
+  marca_id: 
   sexo_id: 
-  precio: 9.99
+  tipo_id: 
   mililitro_id: 
-  imagen_url: MyString
+  imagen_id: 
+  precio: 9.99
 
 two:
   nombre: MyString
-  tipo_id: 
+  marca_id: 
   sexo_id: 
-  precio: 9.99
+  tipo_id: 
   mililitro_id: 
-  imagen_url: MyString
+  imagen_id: 
+  precio: 9.99
