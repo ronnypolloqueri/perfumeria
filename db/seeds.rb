@@ -24,6 +24,49 @@ Tipo.create(:descripcion => 'EDP')
 Marca.create(:descripcion => 'Hugo Boss')
 Marca.create(:descripcion => 'Carolina Herrera')
 Marca.create(:descripcion => 'Givenchy')
-Marca.create(:descripcion => 'Channel')
+Marca.create(descripcion: 'Channel')
+
+Perfume.create(nombre: 'Bottled Night',
+	    marca_id: 1,
+	    sexo_id: 1,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 120.0
+	)
+
+Perfume.create(nombre: 'Bottled',
+	    marca_id: 1,
+	    sexo_id: 1,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 110.0
+	)
+Perfume.create(nombre: 'Boss Selection',
+	    marca_id: 1,
+	    sexo_id: 1,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 130.0
+	)
+Perfume.create(nombre: 'Gentleman',
+	    marca_id: 1,
+	    sexo_id: 1,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 150.0
+	)
+
+Perfume.create(nombre: 'Play Intense',
+	    marca_id: 1,
+	    sexo_id: 1,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 150.0
+	)
 
 
