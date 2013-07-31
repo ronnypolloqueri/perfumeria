@@ -1,6 +1,4 @@
 Perfumeria::Application.routes.draw do
-  resources :perfumes
-
   resources :mililitros
 
   resources :sexo
