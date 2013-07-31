@@ -29,13 +29,12 @@ ActiveRecord::Schema.define(version: 20130729234658) do
     t.integer  "sexo_id"
     t.integer  "tipo_id"
     t.integer  "mililitro_id"
-    t.integer  "imagen_id"
+    t.string   "imagen"
     t.decimal  "precio",       precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "perfumes", ["imagen_id"], name: "index_perfumes_on_imagen_id"
   add_index "perfumes", ["marca_id"], name: "index_perfumes_on_marca_id"
   add_index "perfumes", ["mililitro_id"], name: "index_perfumes_on_mililitro_id"
   add_index "perfumes", ["sexo_id"], name: "index_perfumes_on_sexo_id"

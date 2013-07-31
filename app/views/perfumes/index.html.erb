@@ -24,7 +24,7 @@
         <td><%= perfume.sexo %></td>
         <td><%= perfume.tipo %></td>
         <td><%= perfume.mililitro %></td>
-        <td><%= perfume.imagen %></td>
+        <td><%= image_tag perfume.imagen_path %></td>
         <td><%= perfume.precio %></td>
         <td><%= link_to 'Show', perfume %></td>
         <td><%= link_to 'Edit', edit_perfume_path(perfume) %></td>

@@ -6,7 +6,7 @@ class CreatePerfumes < ActiveRecord::Migration
       t.references :sexo, index: true
       t.references :tipo, index: true
       t.references :mililitro, index: true
-      t.references :imagen, index: true
+      t.string     :imagen
       t.decimal :precio, :precision => 8 , :scale => 2
 
       t.timestamps
