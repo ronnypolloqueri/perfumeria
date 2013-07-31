@@ -1,4 +1,4 @@
-<%= form_for(@perfume) do |f| %>
+<%= form_for(@perfume, html: {multipart: true}) do |f| %>
   <% if @perfume.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@perfume.errors.count, "error") %> prohibited this perfume from being saved:</h2>
@@ -32,8 +32,8 @@
     <%= f.select :mililitro_id, @mililitros %>
   </div>
   <div class="field">
-    <%= f.label :imagen %><br>
-    <%= f.file_field :imagen %>
+    <%= f.label :subir_imagen %><br>
+    <%= f.file_field :subir_imagen %>
   </div>
   <div class="field">
     <%= f.label :precio %><br>

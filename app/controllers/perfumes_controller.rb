@@ -78,6 +78,6 @@ class PerfumesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def perfume_params
-      params.require(:perfume).permit(:nombre, :marca_id, :sexo_id, :tipo_id, :mililitro_id, :imagen, :precio)
+      params.require(:perfume).permit(:nombre, :marca_id, :sexo_id, :tipo_id, :mililitro_id, :subir_imagen, :precio)
     end
 end

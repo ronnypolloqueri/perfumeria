@@ -1,5 +1,5 @@
 class Perfume < ActiveRecord::Base
-	# attr_accessible :imagen
+	# attr_accessible :subir_imagen
 	belongs_to :marca
 	belongs_to :sexo
 	belongs_to :tipo
@@ -12,14 +12,16 @@ class Perfume < ActiveRecord::Base
 
 	after_save :guardar_imagen
 
-	# El nombre de este metodo debe coincidir con el de imagen
-	def imagen=(file_data)
+	# El nombre de este metodo debe coincidir con del metodo del formulario
+	def subir_imagen=(file_data)
 		#Se ejecuta solo si no esta vacio
 		unless file_data.blank?
+			puts "FILEDATA: #{file_data}"
 			@file_data = file_data
 			#Parte el archivo en 2 por el caracter '.' y coge la ultima parte
 			# para luego convertirlo a minuscula
 			self.imagen = file_data.original_filename.split('.').last.downcase
+			puts "IMAGEN: #{self.imagen}"
 			# self.imagen = "#{id}.#{imagen}"
 		end
 	end
