@@ -69,4 +69,47 @@ Perfume.create(nombre: 'Play Intense',
 	    precio: 150.0
 	)
 
+Perfume.create(nombre: 'Boos Orange',
+	    marca_id: 1,
+	    sexo_id: 2,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 170.0
+	)
+
+Perfume.create(nombre: 'Boos Femme',
+	    marca_id: 1,
+	    sexo_id: 2,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 160.0
+	)
+Perfume.create(nombre: 'Amarige',
+	    marca_id: 3,
+	    sexo_id: 2,
+	    tipo_id: 1,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 170.0
+	)
+Perfume.create(nombre: 'Organza',
+	    marca_id: 3,
+	    sexo_id: 2,
+	    tipo_id: 2,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 190.0
+	)
+Perfume.create(nombre: 'Ange ou Demon',
+	    marca_id: 3,
+	    sexo_id: 2,
+	    tipo_id: 2,
+	    mililitro_id: 3,
+	    imagen: 'jpg',
+	    precio: 210.0
+	)
+
+
 
