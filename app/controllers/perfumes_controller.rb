@@ -11,6 +11,10 @@ class PerfumesController < ApplicationController
   # GET /perfumes/1.json
   def show
   end
+  # Distintas vistas de perfumes
+  def masculinos
+    @perfumes = Perfume.where('sexo_id = 1')
+  end
 
   def my_show
     @nombre = Perfume.find(params[:id]).nombre

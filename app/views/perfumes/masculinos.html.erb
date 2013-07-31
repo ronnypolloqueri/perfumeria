@@ -1,0 +1,35 @@
+<h1>Perfumes Masculinos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Marca</th>
+      <th>Sexo</th>
+      <th>Tipo</th>
+      <th>Mililitro</th>
+      <th>Imagen</th>
+      <th>Precio</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @perfumes.each do |perfume| %>
+      <tr>
+        <td><%= perfume.nombre %></td>
+        <td><%= perfume.marca %></td>
+        <td><%= perfume.sexo %></td>
+        <td><%= perfume.tipo %></td>
+        <td><%= perfume.mililitro %></td>
+        <td><%= image_tag perfume.imagen_path %></td>
+        <td><%= perfume.precio %></td>
+        <td><%= link_to 'Show', perfume %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Perfume', new_perfume_path %>
