@@ -1,5 +1,5 @@
 class MarcasController < ApplicationController
-  before_action :set_marca, only: [:show, :edit, :update, :destroy]
+  before_action :set_marca, only: [:linea, :show, :edit, :update, :destroy]
 
   # GET /marcas
   # GET /marcas.json
@@ -10,6 +10,11 @@ class MarcasController < ApplicationController
   # GET /marcas/1
   # GET /marcas/1.json
   def show
+  end
+
+  def linea
+    @marca    = Marca.find(params[:id])
+    @perfumes = Perfume.where('marca_id = ?', @marca.id )
   end
 
   # GET /marcas/new

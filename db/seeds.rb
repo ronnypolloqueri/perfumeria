@@ -61,7 +61,7 @@ Perfume.create(nombre: 'Gentleman',
 	)
 
 Perfume.create(nombre: 'Play Intense',
-	    marca_id: 1,
+	    marca_id: 3,
 	    sexo_id: 1,
 	    tipo_id: 1,
 	    mililitro_id: 3,
