@@ -16,6 +16,10 @@ class PerfumesController < ApplicationController
     @perfumes = Perfume.where('sexo_id = 1')
   end
 
+  def femeninos
+    @perfumes = Perfume.where('sexo_id = 2')
+  end
+
   def my_show
     @nombre = Perfume.find(params[:id]).nombre
     @perfumes = Perfume.where('nombre = ?', @nombre )
