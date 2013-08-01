@@ -11,10 +11,9 @@
     </div>
   <% end %>
   <fieldset>
-    <legend>Formulario</legend>
   <div class="form-group">
-    <%= label(@perfume, :nombre, class: 'control-label') %>
-    <%= text_field(@perfume, :nombre, class: "form-control")%>
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
   </div>
   <br>
   <div class="btn-group">
