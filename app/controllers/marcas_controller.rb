@@ -74,6 +74,6 @@ class MarcasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def marca_params
-      params.require(:marca).permit(:description)
+      params.require(:marca).permit(:descripcion)
     end
 end

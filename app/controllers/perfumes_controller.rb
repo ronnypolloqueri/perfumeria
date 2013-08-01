@@ -36,6 +36,10 @@ class PerfumesController < ApplicationController
 
   # GET /perfumes/1/edit
   def edit
+    @marcas   = Marca.all.collect {|p| [ p.descripcion, p.id ] }
+    @tipos    = Tipo.all.collect {|p| [ p.descripcion, p.id ] }
+    @sexos    = Sexo.all.collect {|p| [ p.descripcion, p.id ] }
+    @mililitros = Mililitro.all.collect {|p| [ p.descripcion, p.id ] }
   end
 
   # POST /perfumes

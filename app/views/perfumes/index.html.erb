@@ -20,10 +20,10 @@
     <% @perfumes.each do |perfume| %>
       <tr>
         <td><%= perfume.nombre %></td>
-        <td><%= perfume.marca %></td>
-        <td><%= perfume.sexo %></td>
-        <td><%= perfume.tipo %></td>
-        <td><%= perfume.mililitro %></td>
+        <td><%= perfume.marca.descripcion %></td>
+        <td><%= perfume.sexo.descripcion %></td>
+        <td><%= perfume.tipo.descripcion %></td>
+        <td><%= perfume.mililitro.descripcion %></td>
         <td><%= image_tag perfume.imagen_path %></td>
         <td><%= perfume.precio %></td>
         <td><%= link_to 'Show', perfume %></td>

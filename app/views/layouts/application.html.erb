@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<nav>
+			<ul>
+				<li><%=link_to 'Fragancias Masculinas', :masculinos_perfumes%></li>
+				<li><%=link_to 'Fragancias Femeninas', :femeninos_perfumes%></li>
+			</ul>
+		</nav>
+	</header>
 
 <%= yield %>
 
