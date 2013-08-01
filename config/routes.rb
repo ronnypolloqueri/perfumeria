@@ -9,20 +9,19 @@ Perfumeria::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'perfumes#index'
+  root 'perfumes#inicio'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  get 'perfumes/ver/:id' => 'perfumes#my_show'
-
+  get 'perfumes/ver/:id' => 'perfumes#my_show', as: 'my_show'
 
   resources :perfumes do
     collection do
-      get :masculinos, :femeninos
+      get :masculinos, :femeninos, :inicio, :acerca_de
     end
   end
 
-  get 'perfumes/lineas/:id' => 'marcas#linea'
+  post 'perfumes/lineas/:id_sexo/:id' => 'marcas#linea'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

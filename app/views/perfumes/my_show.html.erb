@@ -1,34 +1,40 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Nombre:</strong>
-  <%= @perfume.nombre %>
-</p>
+<div class="row">
+  <div class="span2">
+    <%= render '/marcas/marcas' %>
+  </div>
+  <div class="span3">
+    <%= image_tag @perfume.imagen_path %>
+  </div>
 
-<p>
-  <strong>Marca:</strong>
-  <%= @perfume.marca.descripcion %>
-</p>
+  <div class="span7">
+    <p>
+      <strong>Nombre:</strong>
+      <%= @perfume.nombre %>
+    </p>
 
-<p>
-  <strong>Sexo:</strong>
-  <%= @perfume.sexo.descripcion %>
-</p>
+    <p>
+      <strong>Marca:</strong>
+      <%= @perfume.marca.descripcion %>
+    </p>
+
+    <p>
+      <strong>Sexo:</strong>
+      <%= @perfume.sexo.descripcion %>
+    </p>
 
 
 
-<p>
-  <strong>Imagen:</strong>
-  <%= @perfume.imagen %>
-</p>
 
-<table>
-<% @perfumes.each do |p| %>
-	<tr>
-		<td><%= p.nombre %> <%=p.tipo.descripcion.capitalize%> <%=p.mililitro.descripcion %></td>
-		<td>Precio: S/. <%= p.precio %></td>
-	</tr>
-<% end %>
-</table>
 
-<%= link_to 'Edit', edit_perfume_path(@perfume) %> |
-<%= link_to 'Back', perfumes_path %>
+    <table class="table">
+    <% @perfumes.each do |p| %>
+    	<tr>
+    		<td><%= p.nombre %> <%=p.tipo.descripcion.capitalize%> <%=p.mililitro.descripcion %></td>
+    		<td>Precio: S/. <%= p.precio %></td>
+    	</tr>
+    <% end %>
+    </table>
+    <%= link_to 'Regresar', perfumes_path %>
+  </div>
+</div>

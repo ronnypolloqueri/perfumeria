@@ -1,0 +1,8 @@
+<table class="table">
+  <% @marcas.each do |marca| %>
+  <tr>
+    <td><%= link_to marca.descripcion,'#',html_options = {class: 'text-muted'} %><td>
+
+</tr>
+  <% end %>
+</table>

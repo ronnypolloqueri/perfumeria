@@ -11,18 +11,30 @@ class PerfumesController < ApplicationController
   # GET /perfumes/1.json
   def show
   end
+
+  def acerca_de
+  end
   # Distintas vistas de perfumes
+
+  def inicio
+    @perfumes = Perfume.find(:all).last(9)
+    @marcas   = Marca.find(:all)
+  end
+
   def masculinos
     @perfumes = Perfume.where('sexo_id = 1')
+    @marcas   = Marca.find(:all)
   end
 
   def femeninos
     @perfumes = Perfume.where('sexo_id = 2')
+    @marcas   = Marca.find(:all)
   end
 
   def my_show
     @nombre = Perfume.find(params[:id]).nombre
     @perfumes = Perfume.where('nombre = ?', @nombre )
+    @marcas = Marca.find(:all)
   end
 
   # GET /perfumes/new

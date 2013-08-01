@@ -14,7 +14,7 @@ class MarcasController < ApplicationController
 
   def linea
     @marca    = Marca.find(params[:id])
-    @perfumes = Perfume.where('marca_id = ?', @marca.id )
+    @perfumes = Perfume.where('sexo_id = ? and marca_id = ?', params[:id_sexo], params[:id])
   end
 
   # GET /marcas/new

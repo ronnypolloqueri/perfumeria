@@ -1,14 +1,21 @@
+  <div class="row">
+    <div class="span3">
+      <%= render '/marcas/marcas' %>
+    </div>
+    <div class="span9">
+      <ul class="thumbnails" id='post'>
+        <% @perfumes.each do |perfume| %>
+          <div class="post">
+            <li class="span3">
+              <div class='thumbnail'><%= link_to image_tag(perfume.imagen_path), my_show_path(perfume) %>
 
-<table>
-
-  <tbody>
-    <% @perfumes.each do |perfume| %>
-      <tr>
-        <td><%= link_to image_tag(perfume.imagen_path), perfume %></td>
-      </tr>
-      <tr>
-        <td><%= perfume.nombre.upcase %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                <div class='caption'>
+                  <h5><center><%= perfume.nombre.upcase %></center></h5>
+                </div>
+              </div> <!-- thumbnail -->
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>

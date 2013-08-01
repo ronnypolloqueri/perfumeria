@@ -10,36 +10,46 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+  <fieldset>
+    <legend>Formulario</legend>
+  <div class="form-group">
+    <%= label(@perfume, :nombre, class: 'control-label') %>
+    <%= text_field(@perfume, :nombre, class: "form-control")%>
   </div>
-  <div class="field">
-    <%= f.label :marca %><br>
+  <br>
+  <div class="btn-group">
+    <%= f.label :marca %>
     <%= f.select :marca_id, @marcas %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :sexo %><br>
+    <%= f.label :sexo %>
     <%= f.select :sexo_id, @sexos %>
   </div>
+
+  <br>
   <div class="field">
-    <%= f.label :tipo %><br>
+    <%= f.label :tipo %>
     <%= f.select :tipo_id, @tipos %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :mililitro %><br>
+    <%= f.label :mililitro %>
     <%= f.select :mililitro_id, @mililitros %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :subir_imagen %><br>
     <%= f.file_field :subir_imagen %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :precio %><br>
-    <%= f.text_field :precio %>
+    <%= f.label :precio %>
+    <%= f.text_field :precio%>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+  </fieldset>
 <% end %>
