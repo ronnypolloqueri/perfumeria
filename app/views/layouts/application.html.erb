@@ -4,19 +4,54 @@
   <title>Perfumeria</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script type="text/javascript">
+		$(document).ready(function(){
+		$("#cambiar").click(function() {
+			// alert('afd')
+			$("a").css({'color':'red','font-size':'1.3em','background':'yellow'});
+			// console.log("Hola mundo")
+		});
+
+		});
+	</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><%=link_to 'Fragancias Masculinas', :masculinos_perfumes%></li>
-				<li><%=link_to 'Fragancias Femeninas', :femeninos_perfumes%></li>
+	<div class="container">
+		<div class="masthead">
+	        <h3 class="muted">Project name</h3>
+	        <div class="navbar">
+	          <div class="navbar-inner">
+	            <div class="container">
+	              <ul class="nav">
+	                <li class="active"><a href="#">Home</a></li>
+	                <li><%=link_to 'Inicio', :root%></li>
+ 					<li><%=link_to 'Fragancias Masculinas', :masculinos_perfumes%></li>
+					<li><%=link_to 'Fragancias Femeninas', :femeninos_perfumes%></li>
+	                <li><a class="cambiar" href="#">Services</a></li>
+	                <li><a href="#">Downloads</a></li>
+	                <li><%=link_to 'Quienes Somos', '#'%></li>
+					<li><%=link_to 'Contacto', '#'%></li>
+	              </ul>
+	            </div>
+	          </div>
+	        </div><!-- /.navbar -->
+	    </div>
+	</div><!-- /.container -->
+
+
+		<!-- <nav> -->
+<!-- 			<ul class="nav nav-pills nav-justified">-->
+<!--  			<ul class="nav nav-tabs nav-justified ">
+ 				<li><%=link_to 'Inicio', :root%></li>
+				<li><%=link_to 'Quienes Somos', '#'%></li>
+				<li><%=link_to 'Contacto', '#'%></li>
 			</ul>
 		</nav>
-	</header>
+	</div>
+	</header> -->
 
-<%= yield %>
-
+	<%= yield %>
+	</div><!-- /.container -->
 </body>
 </html>
