@@ -7,6 +7,29 @@
   <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tags %>
+  <script>
+  		$(document).ready(function(){
+  			alert("listo para trabajar");
+  			console.log("listo para trabajar");
+  			$("#uno").click(function(e){
+  				  $("li").removeClass();
+  			      $("#uno").addClass("active");
+  			      alert("activado uno");
+  			      console.log("click en uno");
+  			   });
+  			$("#dos").click(function(e){
+  				  $("li").removeClass();
+  			      $("#dos").addClass("active");
+  			      alert("activado dos");
+  			      console.log("click en dos");
+  			   });
+  			$("a").click(function(e){
+  			      console.log("click en a");
+  			   });
+
+  		});
+
+  </script>
 </head>
 <body>
 	<div class="container">
@@ -16,10 +39,10 @@
 	          <div class="navbar-inner">
 	            <div class="container">
 	              <ul class="nav">
-	                <li><%=link_to 'Inicio', :root%></li>
- 					<li class="active"><%=link_to 'Fragancias Masculinas', :masculinos_perfumes%></li>
+	                <li id="uno" ><%=link_to 'Inicio', :root, class: 'uno'%></li>
+ 					<li id="dos" ><%=link_to 'Fragancias Masculinas', :masculinos_perfumes, class: "dos"%></li>
 					<li><%=link_to 'Fragancias Femeninas', :femeninos_perfumes%></li>
-					<li><%=link_to 'Contacto', '#'%></li>
+					<li class="active"><%=link_to 'Contacto', '#'%></li>
 	                <li><%=link_to 'Quienes Somos', :acerca_de_perfumes%></li>
 	              </ul>
 	            </div>
