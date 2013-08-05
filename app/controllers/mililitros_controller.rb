@@ -1,6 +1,6 @@
 class MililitrosController < ApplicationController
   before_action :set_mililitro, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize
   # GET /mililitros
   # GET /mililitros.json
   def index

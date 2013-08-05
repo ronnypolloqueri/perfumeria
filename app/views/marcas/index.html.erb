@@ -1,9 +1,9 @@
-<h1>Listing marcas</h1>
+<h1>Lista de marcas</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Description</th>
+      <th>Descripcion</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,7 +16,7 @@
         <td><%= marca.descripcion %></td>
         <td><%= link_to 'Mostrar', marca %></td>
         <td><%= link_to 'Editar', edit_marca_path(marca) %></td>
-        <td><%= link_to 'Eliminar', marca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', marca, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Marca', new_marca_path %>
+<%= link_to 'Nueva Marca', new_marca_path , class: "btn btn-primary"%>

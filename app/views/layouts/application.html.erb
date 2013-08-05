@@ -9,23 +9,23 @@
   <%= csrf_meta_tags %>
   <script>
   		$(document).ready(function(){
-  			alert("listo para trabajar");
-  			console.log("listo para trabajar");
-  			$("#uno").click(function(e){
-  				  $("li").removeClass();
-  			      $("#uno").addClass("active");
-  			      alert("activado uno");
-  			      console.log("click en uno");
-  			   });
-  			$("#dos").click(function(e){
-  				  $("li").removeClass();
-  			      $("#dos").addClass("active");
-  			      alert("activado dos");
-  			      console.log("click en dos");
-  			   });
-  			$("a").click(function(e){
-  			      console.log("click en a");
-  			   });
+  			// alert("listo para trabajar");
+  			// console.log("listo para trabajar");
+  			// $("#uno").click(function(e){
+  			// 	  $("li").removeClass();
+  			//       $("#uno").addClass("active");
+  			//       alert("activado uno");
+  			//       console.log("click en uno");
+  			//    });
+  			// $("#dos").click(function(e){
+  			// 	  $("li").removeClass();
+  			//       $("#dos").addClass("active");
+  			//       alert("activado dos");
+  			//       console.log("click en dos");
+  			//    });
+  			// $("a").click(function(e){
+  			//       console.log("click en a");
+  			//    });
 
   		});
 
@@ -42,12 +42,34 @@
 	                <li id="uno" ><%=link_to 'Inicio', :root, class: 'uno'%></li>
  					<li id="dos" ><%=link_to 'Fragancias Masculinas', :masculinos_perfumes, class: "dos"%></li>
 					<li><%=link_to 'Fragancias Femeninas', :femeninos_perfumes%></li>
-					<li class="active"><%=link_to 'Contacto', '#'%></li>
+					<li><%=link_to 'Contacto', '#'%></li>
 	                <li><%=link_to 'Quienes Somos', :acerca_de_perfumes%></li>
 	              </ul>
 	            </div>
 	          </div>
 	        </div><!-- /.navbar -->
+          <% if User.find_by(id: session[:user_id])%>
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <ul class="nav">
+                  <li>
+                    <%= link_to 'Panel Perfumes', :perfumes %>
+                  </li>
+                  <li>
+                    <%= link_to 'Panel Marcas', :marcas %>
+                  </li>
+                  <li>
+                    <%= link_to 'Panel Usuarios', :users %>
+                  </li>
+                  <li><%=link_to 'Salir',logout_path, method: :delete %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> <!-- navbar administrador -->
+          <% end %>
+
 	    </div>
 	    <%= yield %>
 

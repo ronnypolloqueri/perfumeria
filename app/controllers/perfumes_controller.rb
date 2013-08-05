@@ -1,5 +1,6 @@
 class PerfumesController < ApplicationController
   before_action :set_perfume, only: [:my_show, :show, :edit, :update, :destroy]
+  before_action :authorize, only: [:index, :show, :new, :create, :update, :destroy]
 
   # GET /perfumes
   # GET /perfumes.json
@@ -93,6 +94,7 @@ class PerfumesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

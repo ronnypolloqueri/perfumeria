@@ -7,6 +7,7 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 class AdminController < ApplicationController
+  before_action :authorize
   def index
     # @total_orders = Order.count
   end
