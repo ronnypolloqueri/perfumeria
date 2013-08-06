@@ -1,0 +1,30 @@
+<div>
+  <% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+
+  <%= form_tag do %>
+    <fieldset>
+      <legend>Por favor, ingrese sus datos para contactarlo</legend>
+
+      <div>
+        <%= label_tag :nombre, 'Nombre:' %>
+        <%= text_field_tag :nombre, params[:nombre] %>
+      </div>
+
+      <div>
+        <%= label_tag :email, 'Email:' %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+
+	  <div>
+        <%= label_tag :mensaje, 'Mensaje:' %>
+        <%= text_field_tag :mensaje, params[:mensaje] %>
+      </div>
+
+      <div>
+        <%= submit_tag "Enviar" ,  class: "btn btn-primary"%>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
