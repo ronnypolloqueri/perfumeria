@@ -1,8 +1,17 @@
-<table class="table">
+<div class="row">
+  <div class="span3 bs-docs-sidebar">
+  	<ul class="nav nav-list bs-docs-sidenav" >
   <% @marcas.each do |marca| %>
-  <tr>
-    <td><%= link_to marca.descripcion,'#',html_options = {class: 'text-muted'} %><td>
+    <li>
+    	<h5>
+    	<%= link_to marca.descripcion, @sexo==1? masculino_path(marca.id) : femenino_path(marca.id) %>
+		</h5>
+	</li>
+	    <% #"link_to marca.descripcion,'#',html_options = {class: 'text-muted'} %>
+	<li class="divider"></li>
 
-</tr>
+
   <% end %>
-</table>
+  	</ul>
+  </div>
+</div>

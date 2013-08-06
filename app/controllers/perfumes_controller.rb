@@ -18,18 +18,20 @@ class PerfumesController < ApplicationController
   # Distintas vistas de perfumes
 
   def inicio
-    @perfumes = Perfume.find(:all).last(9)
-    @marcas   = Marca.find(:all)
+    @perfumes = Perfume.all.order(:created_at).reverse_order
+    @marcas   = Marca.all.order(:descripcion)
   end
 
   def masculinos
-    @perfumes = Perfume.where('sexo_id = 1')
-    @marcas   = Marca.find(:all)
+    @sexo = 1
+    @perfumes = Perfume.where('sexo_id = 1').order(:created_at).reverse_order
+    @marcas   = Marca.all.order(:descripcion)
   end
 
   def femeninos
-    @perfumes = Perfume.where('sexo_id = 2')
-    @marcas   = Marca.find(:all)
+    @sexo = 2
+    @perfumes = Perfume.where('sexo_id = 2').order(:created_at).reverse_order
+    @marcas   = Marca.all.order(:descripcion)
   end
 
   def my_show

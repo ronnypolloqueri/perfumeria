@@ -4,7 +4,7 @@
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</h2>
+        prohibe que este usuario pueda ser guardado:</h2>
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -14,7 +14,7 @@
   <% end %>
 
   <fieldset>
-  <legend>Enter User Details</legend>
+  <legend>Ingrese los detalles del usuario</legend>
 
   <div class="field">
     <%= f.label :name, 'Name:' %>

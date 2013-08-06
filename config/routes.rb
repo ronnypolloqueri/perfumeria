@@ -32,7 +32,8 @@ Perfumeria::Application.routes.draw do
     end
   end
 
-  get 'lineas/:id' => 'marcas#linea_masculina'
+  get 'perfumes/masculinos/lineas/:id' => 'marcas#linea_masculina', as: 'masculino'
+  get 'perfumes/femeninos/lineas/:id' => 'marcas#linea_femenina', as: 'femenino'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

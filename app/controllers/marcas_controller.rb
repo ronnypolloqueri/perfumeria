@@ -1,12 +1,12 @@
 class MarcasController < ApplicationController
   before_action :set_marca, only: [:linea, :show, :edit, :update, :destroy]
   before_action :authorize
-  skip_before_action :authorize, only: [:linea_masculina]
+  skip_before_action :authorize, only: [:linea_masculina, :linea_femenina]
 
   # GET /marcas
   # GET /marcas.json
   def index
-    @marcas = Marca.all
+    @marcas = Marca.all.order(:descripcion)
   end
 
   # GET /marcas/1
@@ -15,9 +15,17 @@ class MarcasController < ApplicationController
   end
 
   def linea_masculina
-    @marcas   = Marca.find(:all)
+    @sexo = 1
+    @marcas   = Marca.all.order(:descripcion)
     @marca    = Marca.find(params[:id])
     @perfumes = Perfume.where('sexo_id = 1 and marca_id = ?', params[:id])
+  end
+
+  def linea_femenina
+    @sexo = 2
+    @marcas   = Marca.all.order(:descripcion)
+    @marca    = Marca.find(params[:id])
+    @perfumes = Perfume.where('sexo_id = 2 and marca_id = ?', params[:id])
   end
 
   # GET /marcas/new
